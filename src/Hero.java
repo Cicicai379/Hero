@@ -32,9 +32,9 @@ public class Hero {
     }
     public void senzuBean(){
         this.hitPoints=100;
-    }
+    } //restore hitpoints
     private void fightUntilTheDeathHelper(Hero opp){
-        while(opp.hitPoints>0&&this.hitPoints>0){
+        while(opp.hitPoints>0&&this.hitPoints>0){//attack until dead
             attack(opp);
         }
     }
@@ -46,13 +46,13 @@ public class Hero {
     }
 
     private void nFightsToTheDeathHelper(Hero opp, int n){
-        while(opp.hitPoints>0&&this.hitPoints>0){
+        while(opp.hitPoints>0&&this.hitPoints>0){ //keep attaking until one is dead
             attack(opp);
             n--;
         }
         opp.senzuBean();
         this.senzuBean();
-        while(n>0){
+        while(n>0){//remaining rights
             attack(opp);
             n--;
         }
@@ -70,9 +70,9 @@ public class Hero {
         }
         opp.senzuBean();
         this.senzuBean();
-        while(n>0){
+        while(n>0){//attack remaining fights
 
-            if( attack(opp)){
+            if( attack(opp)){//count wins
                 o++;
             }else{
                 m++;
@@ -94,7 +94,7 @@ public class Hero {
         int o=0;
         int m=0;
         String ans="";
-        while(opp.hitPoints>0&&this.hitPoints>0){
+        while(opp.hitPoints>0&&this.hitPoints>0){ // keep attacking until one is dead
 
             if( attack(opp)){
                 ans=opp.name+": "+"\n"+opp.getHitPoints()+": "+o+" \n\n";
@@ -116,3 +116,4 @@ public class Hero {
         return ans;
     }
 }
+
