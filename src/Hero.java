@@ -20,7 +20,7 @@ public class Hero {
     }
     public boolean attack(Hero opp){
         double r = Math.random();
-        if(r<0.5){
+        if(r<0.5){ //if random number smaller than 0.5
             opp.hitPoints-=10;
             return false;
         }else{
